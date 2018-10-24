@@ -1,5 +1,5 @@
 
-### About
+### 关于
 > 商业版预览: [http://fakala.xyz/](http://fakala.xyz/)
 
 > 开源版当前版本: 2.0
@@ -9,6 +9,7 @@
 ### 常见问题
  - 修改 `.env` 文件无效 / 修改网站设置无效
  ```
+ cd /www/wwwroot/example.com  #进入网站目录
  php artisan config:clear
  php artisan cache:clear
  ```
