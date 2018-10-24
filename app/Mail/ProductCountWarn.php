@@ -1,0 +1,2 @@
+<?php
+namespace App\Mail; use Illuminate\Bus\Queueable; use Illuminate\Mail\Mailable; use Illuminate\Queue\SerializesModels; use Illuminate\Contracts\Queue\ShouldQueue; class ProductCountWarn extends Mailable { use Queueable, SerializesModels; public $product = null; public $count = null; public function __construct($spcf7f28, $sp1f1cf0) { $this->product = $spcf7f28; $this->count = $sp1f1cf0; } public function build() { return $this->subject(config('app.name') . '-库存预警 #' . $this->product->name)->view('emails.product_count_warn'); } }

@@ -1,0 +1,2 @@
+<?php
+$spe325b5['partner'] = '2088421538865921'; $spe325b5['seller_id'] = $spe325b5['partner']; $spe325b5['key'] = 'afrcvn5nzugzful4cto4wme3cj0i5x27'; $spe325b5['sign_type'] = strtoupper('MD5'); $spe325b5['input_charset'] = strtolower('utf-8'); $spe325b5['cacert'] = getcwd() . '\\cacert.pem'; $spe325b5['transport'] = 'https'; $spe325b5['payment_type'] = '1'; $spe325b5['service'] = 'alipay.wap.create.direct.pay.by.user';

@@ -1,0 +1,2 @@
+<?php
+namespace App\Mail; use Illuminate\Bus\Queueable; use Illuminate\Mail\Mailable; use Illuminate\Queue\SerializesModels; use Illuminate\Contracts\Queue\ShouldQueue; class OrderShipped extends Mailable { use Queueable, SerializesModels; public $order; public $msg; public function __construct($sp7fd294, $spbfa8f4) { $this->order = $sp7fd294; $this->msg = $spbfa8f4; } public function build() { return $this->subject(config('app.name') . '-订单提醒')->view('emails.order'); } }

@@ -1,0 +1,2 @@
+<?php
+use Illuminate\Support\Facades\Schema; use Illuminate\Database\Schema\Blueprint; use Illuminate\Database\Migrations\Migration; class CreateSystemsTable extends Migration { public function up() { Schema::create('systems', function (Blueprint $sp3881f9) { $sp3881f9->increments('id'); $sp3881f9->string('name', 100)->unique(); $sp3881f9->longText('value')->nullable(); $sp3881f9->timestamps(); }); } public function down() { Schema::dropIfExists('systems'); } }

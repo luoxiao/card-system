@@ -1,0 +1,2 @@
+<?php
+class AlipayF2FQueryResult { private $tradeStatus; private $response; public function __construct($sp5241d0) { $this->response = $sp5241d0; } public function AlipayF2FPayResult($sp5241d0) { $this->__construct($sp5241d0); } public function setTradeStatus($spd7145d) { $this->tradeStatus = $spd7145d; } public function getTradeStatus() { return $this->tradeStatus; } public function setResponse($sp5241d0) { $this->response = $sp5241d0; } public function getResponse() { return $this->response; } }
