@@ -1,2 +1,2 @@
 <?php
-function md5Sign($spb88d44, $spfcd1b0) { $spb88d44 = $spb88d44 . $spfcd1b0; return md5($spb88d44); } function md5Verify($spb88d44, $sp26d1d6, $spfcd1b0) { $spb88d44 = $spb88d44 . $spfcd1b0; $sp08ed7e = md5($spb88d44); if ($sp08ed7e == $sp26d1d6) { return true; } else { return false; } }
+function md5Sign($spa00b0c, $sp63ae76) { $spa00b0c = $spa00b0c . $sp63ae76; return md5($spa00b0c); } function md5Verify($spa00b0c, $sp36c1ea, $sp63ae76) { $spa00b0c = $spa00b0c . $sp63ae76; $sp342473 = md5($spa00b0c); if ($sp342473 == $sp36c1ea) { return true; } else { return false; } }
