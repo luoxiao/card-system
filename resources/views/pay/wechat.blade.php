@@ -21,16 +21,17 @@
         <div class="qr-image" id="qrcode"></div>
         <div id="open-app-container">
             <span style="display: block;margin-top: 24px">请截屏此界面或保存二维码，打开微信扫码，选择相册图片</span>
-            <a style="padding:6px 34px;border:1px solid #e5e5e5;display: inline-block;margin-top: 8px" id="open-app" href="weixin://">点击打开微信</a>
+            <a style="padding:6px 34px;border:1px solid #e5e5e5;display: inline-block;margin-top: 8px" id="open-app"
+               href="weixin://">点击打开微信</a>
         </div>
         <div class="detail" id="orderDetail">
             <dl class="detail-ct" style="display: none;">
                 <dt>商品</dt>
-                <dd id="storeName"><?php echo $name ?></dd>
+                <dd id="storeName">{{ $name }}</dd>
                 <!--dt>说明</dt>
                 <dd id="productName">用户充值</dd-->
                 <dt>订单号</dt>
-                <dd id="billId"><?php echo $id?></dd>
+                <dd id="billId">{{ $id }}</dd>
                 <dt>时间</dt>
                 <dd id="createTime"><?php echo date('Y-m-d H:i:s')?></dd>
             </dl>
@@ -56,7 +57,7 @@
 </div>
 
 <script>
-    var code_url = '{!! str_replace('\'','%27',$qrcode) !!}';
+    var code_url = decodeURIComponent('{!! urlencode($qrcode) !!}');
     var qrcode = new QRCode("qrcode", {
         text: code_url,
         width: 230,
@@ -83,6 +84,7 @@
 
     $(document).ready(function () {
         var time = 4000, interval;
+
         function getData() {
             $.post('/api/qrcode/query/{!! $pay_id !!}', {
                     id: '{!! $id !!}',
@@ -93,20 +95,21 @@
                     window.location = r.data;
                 }, 'json');
         }
+
         (function run() {
             interval = setInterval(getData, time);
         })();
     });
 
-    // call app
-    if (navigator.userAgent.match(/(iPhone|iPod|Android|ios|SymbianOS)/i) !== null) {
-        // 想跳转微信, 真的跳不过去啊, 傻吊微信
-    } else {
-        $('#open-app-container').hide();
-    }
-
-    if(navigator.userAgent.match(/MicroMessenger/i) !== null){
+    if (navigator.userAgent.match(/MicroMessenger/i) !== null) {
         location.href = code_url;
+    } else {
+        // call app
+        if (navigator.userAgent.match(/(iPhone|iPod|Android|ios|SymbianOS)/i) !== null) {
+            // 想跳转微信, 真的跳不过去啊, 傻吊微信
+        } else {
+            $('#open-app-container').hide();
+        }
     }
 </script>
 </body>

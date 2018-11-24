@@ -1,2 +1,2 @@
 <?php
-$sp43cab0 = new Illuminate\Foundation\Application(realpath(__DIR__ . '/../')); $sp43cab0->singleton(Illuminate\Contracts\Http\Kernel::class, App\Http\Kernel::class); $sp43cab0->singleton(Illuminate\Contracts\Console\Kernel::class, App\Console\Kernel::class); $sp43cab0->singleton(Illuminate\Contracts\Debug\ExceptionHandler::class, App\Exceptions\Handler::class); return $sp43cab0;
+$spd781ca = new Illuminate\Foundation\Application(realpath(__DIR__ . '/../')); $spd781ca->singleton(Illuminate\Contracts\Http\Kernel::class, App\Http\Kernel::class); $spd781ca->singleton(Illuminate\Contracts\Console\Kernel::class, App\Console\Kernel::class); $spd781ca->singleton(Illuminate\Contracts\Debug\ExceptionHandler::class, App\Exceptions\Handler::class); return $spd781ca;

@@ -18,7 +18,3 @@
  cd /www/wwwroot/example.com  #进入网站目录
  php artisan reset:password admin@qq.com 123456
  ```
- - 500错误
- ```
- storage/logs 里面有错误详细内容, 可以自行参考解决, 或者附录log文件提交issue/mail
- ```
