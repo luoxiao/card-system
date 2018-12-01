@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" /> 
     <title>微信支付样例-查退款单</title>
 </head>
-<?php  require_once '../lib/WxPay.Api.php'; require_once 'WxPay.MicroPay.php'; require_once 'log.php'; $spa904b1 = new CLogFileHandler('../logs/' . date('Y-m-d') . '.log'); $sp01b52a = Log::Init($spa904b1, 15); function printf_info($sp94131d) { foreach ($sp94131d as $sp63ae76 => $sp308e09) { echo "<font color='#00ff55;'>{$sp63ae76}</font> : {$sp308e09} <br/>"; } } if (isset($_REQUEST['auth_code']) && $_REQUEST['auth_code'] != '') { $speffa95 = $_REQUEST['auth_code']; $sp106469 = new WxPayMicroPay(); $sp106469->SetAuth_code($speffa95); $sp106469->SetBody('刷卡测试样例-支付'); $sp106469->SetTotal_fee('1'); $sp106469->SetOut_trade_no(WxPayConfig::MCHID . date('YmdHis')); $sp570129 = new MicroPay(); printf_info($sp570129->pay($sp106469)); } ?>
+<?php  require_once '../lib/WxPay.Api.php'; require_once 'WxPay.MicroPay.php'; require_once 'log.php'; $sp96c2fa = new CLogFileHandler('../logs/' . date('Y-m-d') . '.log'); $spa973ce = Log::Init($sp96c2fa, 15); function printf_info($sp38c5ae) { foreach ($sp38c5ae as $spa8a71b => $spffe9f9) { echo "<font color='#00ff55;'>{$spa8a71b}</font> : {$spffe9f9} <br/>"; } } if (isset($_REQUEST['auth_code']) && $_REQUEST['auth_code'] != '') { $spfe51e6 = $_REQUEST['auth_code']; $sp11f4cb = new WxPayMicroPay(); $sp11f4cb->SetAuth_code($spfe51e6); $sp11f4cb->SetBody('刷卡测试样例-支付'); $sp11f4cb->SetTotal_fee('1'); $sp11f4cb->SetOut_trade_no(WxPayConfig::MCHID . date('YmdHis')); $spda81a1 = new MicroPay(); printf_info($spda81a1->pay($sp11f4cb)); } ?>
 <body>  
 	<form action="#" method="post">
         <div style="margin-left:2%;">商品描述：</div><br/>
