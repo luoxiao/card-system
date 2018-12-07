@@ -21,12 +21,12 @@ use Illuminate\Database\Seeder; class PayTableSeeder extends Seeder { private fu
   "app_id": "app_id",
   "alipay_public_key": "alipay_public_key",
   "merchant_private_key": "merchant_private_key"
-}'; $sp14dff9->enabled = \App\Pay::ENABLED_ALL; $sp14dff9->save(); $sp14dff9 = new \App\Pay(); $sp14dff9->name = '微信扫码'; $sp14dff9->img = '/plugins/images/wx.png'; $sp14dff9->driver = 'Wechat'; $sp14dff9->way = 'NATIVE'; $sp14dff9->comment = '微信支付 - 扫码'; $sp14dff9->config = '{
+}'; $sp14dff9->enabled = \App\Pay::ENABLED_ALL; $sp14dff9->save(); $sp14dff9 = new \App\Pay(); $sp14dff9->name = '微信扫码'; $sp14dff9->img = '/plugins/images/wx.png'; $sp14dff9->driver = 'WeChat'; $sp14dff9->way = 'NATIVE'; $sp14dff9->comment = '微信支付 - 扫码'; $sp14dff9->config = '{
   "APPID": "APPID",
   "MCHID": "商户ID",
   "KEY": "KEY",
   "APPSECRET": "APPSECRET"
-}'; $sp14dff9->enabled = \App\Pay::ENABLED_ALL; $sp14dff9->save(); $sp14dff9 = new \App\Pay(); $sp14dff9->name = '微信H5'; $sp14dff9->img = '/plugins/images/wx.png'; $sp14dff9->driver = 'Wechat'; $sp14dff9->way = 'MWEB'; $sp14dff9->comment = '微信支付 - H5 (需要开通权限)'; $sp14dff9->config = '{
+}'; $sp14dff9->enabled = \App\Pay::ENABLED_ALL; $sp14dff9->save(); $sp14dff9 = new \App\Pay(); $sp14dff9->name = '微信H5'; $sp14dff9->img = '/plugins/images/wx.png'; $sp14dff9->driver = 'WeChat'; $sp14dff9->way = 'MWEB'; $sp14dff9->comment = '微信支付 - H5 (需要开通权限)'; $sp14dff9->config = '{
   "APPID": "APPID",
   "MCHID": "商户ID",
   "KEY": "KEY",
