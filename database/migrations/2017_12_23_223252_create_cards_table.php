@@ -1,5 +1,5 @@
 <?php
-use Illuminate\Support\Facades\Schema; use Illuminate\Database\Schema\Blueprint; use Illuminate\Database\Migrations\Migration; class CreateCardsTable extends Migration { public function up() { Schema::create('cards', function (Blueprint $spe8060e) { $spe8060e->increments('id'); $spe8060e->integer('user_id'); $spe8060e->integer('product_id'); $spe8060e->string('card', 100); $spe8060e->integer('type'); $spe8060e->integer('status')->default(\App\Card::STATUS_NORMAL); $spe8060e->integer('count_sold')->default(0); $spe8060e->integer('count_all')->default(1); $spe8060e->timestamps(); $spe8060e->softDeletes(); $spe8060e->index(array('user_id', 'product_id')); }); DB::unprepared('ALTER TABLE `cards` CHANGE COLUMN `created_at` `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP;'); try { DB::unprepared('DROP PROCEDURE `add_cards`;'); } catch (\Exception $sp805d3e) { } DB::unprepared('
+use Illuminate\Support\Facades\Schema; use Illuminate\Database\Schema\Blueprint; use Illuminate\Database\Migrations\Migration; class CreateCardsTable extends Migration { public function up() { Schema::create('cards', function (Blueprint $sp04f69b) { $sp04f69b->increments('id'); $sp04f69b->integer('user_id'); $sp04f69b->integer('product_id'); $sp04f69b->string('card', 100); $sp04f69b->integer('type'); $sp04f69b->integer('status')->default(\App\Card::STATUS_NORMAL); $sp04f69b->integer('count_sold')->default(0); $sp04f69b->integer('count_all')->default(1); $sp04f69b->timestamps(); $sp04f69b->softDeletes(); $sp04f69b->index(array('user_id', 'product_id')); }); DB::unprepared('ALTER TABLE `cards` CHANGE COLUMN `created_at` `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP;'); try { DB::unprepared('DROP PROCEDURE `add_cards`;'); } catch (\Exception $spa0e498) { } DB::unprepared('
 CREATE PROCEDURE `add_cards`(IN `in_user_id` int, IN `in_product_id` int, IN `in_type` int, IN `in_status` int, IN `in_card_arr` longtext, IN `in_is_check` tinyint)
 LANGUAGE SQL
 NOT DETERMINISTIC
@@ -22,4 +22,4 @@ DO
 	END IF; 
 	SET @i=@i+1; 
 END WHILE;
-END;'); } public function down() { Schema::dropIfExists('cards'); try { DB::unprepared('DROP PROCEDURE `add_cards`;'); } catch (\Exception $sp805d3e) { } } }
+END;'); } public function down() { Schema::dropIfExists('cards'); try { DB::unprepared('DROP PROCEDURE `add_cards`;'); } catch (\Exception $spa0e498) { } } }
