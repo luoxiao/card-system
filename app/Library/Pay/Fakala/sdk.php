@@ -1,5 +1,5 @@
 <?php
-class fakala { public $gateway; public $uid; public $key; public function __construct($spbf0254, $sp7a2170, $spc95936) { $this->gateway = $spbf0254; $this->uid = $sp7a2170; $this->key = $spc95936; } function getSignStr($sp636f0e) { ksort($sp636f0e); $sp7f5d5a = ''; foreach ($sp636f0e as $spc20e8d => $spc86f28) { if ('sign' !== $spc20e8d) { $sp7f5d5a .= $spc20e8d . '=' . ($spc86f28 ? $spc86f28 : '') . '&'; } } return $sp7f5d5a; } function getSign($sp636f0e, $spc95936, &$sp734e8d = false) { $sp7f5d5a = self::getSignStr($sp636f0e); $spc768dc = md5($sp7f5d5a . 'key=' . $spc95936); if ($sp734e8d !== false) { $sp734e8d = $sp7f5d5a . 'sign=' . $spc768dc; } return $spc768dc; } function goPay($sp286f3b, $spd2bbfa, $sp20ba68, $sp151a84, $sp078573, $spa3a5fd, $sp45b937) { $sp636f0e = array('uid' => (int) $this->uid, 'out_trade_no' => $spd2bbfa, 'total_fee' => (int) $sp151a84, 'cost' => (int) $sp20ba68, 'payway' => $sp286f3b, 'return_url' => $spa3a5fd, 'notify_url' => $sp45b937, 'attach' => $sp078573); $sp636f0e['sign'] = $this->getSign($sp636f0e, $this->key); die('
+class fakala { public $gateway; public $uid; public $key; public function __construct($sp638b26, $spae6a5b, $spb5c5a0) { $this->gateway = $sp638b26; $this->uid = $spae6a5b; $this->key = $spb5c5a0; } function getSignStr($sp5e6808) { ksort($sp5e6808); $spad17d4 = ''; foreach ($sp5e6808 as $sp467973 => $sp06d9c9) { if ('sign' !== $sp467973) { $spad17d4 .= $sp467973 . '=' . ($sp06d9c9 ? $sp06d9c9 : '') . '&'; } } return $spad17d4; } function getSign($sp5e6808, $spb5c5a0, &$sp7eb55b = false) { $spad17d4 = self::getSignStr($sp5e6808); $sp7b1c1e = md5($spad17d4 . 'key=' . $spb5c5a0); if ($sp7eb55b !== false) { $sp7eb55b = $spad17d4 . 'sign=' . $sp7b1c1e; } return $sp7b1c1e; } function goPay($spc21a73, $sp79d97c, $sp197757, $sp1ae8d8, $speefbd3, $sp82b2fc, $sp72a819) { $sp5e6808 = array('uid' => (int) $this->uid, 'out_trade_no' => $sp79d97c, 'total_fee' => (int) $sp1ae8d8, 'cost' => (int) $sp197757, 'payway' => $spc21a73, 'return_url' => $sp82b2fc, 'notify_url' => $sp72a819, 'attach' => $speefbd3); $sp5e6808['sign'] = $this->getSign($sp5e6808, $this->key); die('
 <!doctype html>
 <html>
 <head>
@@ -7,15 +7,15 @@ class fakala { public $gateway; public $uid; public $key; public function __cons
 </head>
 <body onload="document.pay.submit()">
 <form name="pay" action="' . $this->gateway . '/api/order" method="post">
-    <input type="hidden" name="uid" value="' . $sp636f0e['uid'] . '">
-    <input type="hidden" name="out_trade_no" value="' . $sp636f0e['out_trade_no'] . '">
-    <input type="hidden" name="total_fee" value="' . $sp636f0e['total_fee'] . '">
-    <input type="hidden" name="cost" value="' . $sp636f0e['cost'] . '">
-    <input type="hidden" name="payway" value="' . $sp636f0e['payway'] . '">
-    <input type="hidden" name="return_url" value="' . $sp636f0e['return_url'] . '">
-    <input type="hidden" name="notify_url" value="' . $sp636f0e['notify_url'] . '">
-    <input type="hidden" name="attach" value="' . $sp636f0e['attach'] . '">
-    <input type="hidden" name="sign" value="' . $sp636f0e['sign'] . '">
+    <input type="hidden" name="uid" value="' . $sp5e6808['uid'] . '">
+    <input type="hidden" name="out_trade_no" value="' . $sp5e6808['out_trade_no'] . '">
+    <input type="hidden" name="total_fee" value="' . $sp5e6808['total_fee'] . '">
+    <input type="hidden" name="cost" value="' . $sp5e6808['cost'] . '">
+    <input type="hidden" name="payway" value="' . $sp5e6808['payway'] . '">
+    <input type="hidden" name="return_url" value="' . $sp5e6808['return_url'] . '">
+    <input type="hidden" name="notify_url" value="' . $sp5e6808['notify_url'] . '">
+    <input type="hidden" name="attach" value="' . $sp5e6808['attach'] . '">
+    <input type="hidden" name="sign" value="' . $sp5e6808['sign'] . '">
 </form>
 </body>
-        '); } function notify_verify() { $sp636f0e = $_POST; if ($sp636f0e['sign'] === $this->getSign($sp636f0e, $this->key)) { echo 'success'; return true; } else { echo 'fail'; return false; } } function return_verify() { $sp636f0e = $_GET; if ($sp636f0e['sign'] === $this->getSign($sp636f0e, $this->key)) { return true; } else { return false; } } }
+        '); } function notify_verify() { $sp5e6808 = $_POST; if (@$sp5e6808['sign'] === $this->getSign($sp5e6808, $this->key)) { echo 'success'; return true; } else { echo 'fail'; return false; } } function return_verify() { $sp5e6808 = $_GET; if (@$sp5e6808['sign'] === $this->getSign($sp5e6808, $this->key)) { return true; } else { return false; } } }

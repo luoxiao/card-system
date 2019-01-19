@@ -1,11 +1,11 @@
 
 ### 关于
-> 商业版预览: [http://fakala.xyz/](http://fakala.xyz/)
+> 商业版预览: [https://2ka.co.uk/](https://2ka.co.uk/)
 
-> 开源版当前版本: 2.4
+> 开源版当前版本: 2.5
 
-> [BT面板安装教程---V2.X](https://github.com/Tai7sy/card-system/wiki/BT%E9%9D%A2%E6%9D%BF%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B---V2.X)
-
+> [安装教程 V2.X](https://github.com/Tai7sy/card-system/wiki/BT%E9%9D%A2%E6%9D%BF%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B---V2.X)
+> [更新教程 V2.X](https://github.com/Tai7sy/card-system/wiki/V2.X-%E6%9B%B4%E6%96%B0%E6%95%99%E7%A8%8B)
 ### 常见问题
  - 修改 `.env` 文件无效 / 修改网站设置无效
  ```

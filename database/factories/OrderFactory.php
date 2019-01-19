@@ -1,0 +1,2 @@
+<?php
+use Faker\Generator as Faker; $spf0ab37->define(App\Order::class, function (Faker $sp7c58b6) { $spd58066 = date('YmdHis') . mt_rand(10000, 99999); while (\App\Order::whereOrderNo($spd58066)->exists()) { $spd58066 = date('YmdHis') . mt_rand(10000, 99999); } $spbe187f = random_int(0, 1) ? $sp7c58b6->email : 'user01@qq.com'; $sp56c01f = 1000; $sp9fd731 = random_int(0, 1) * 100; $sp1c3d1d = $sp56c01f - $sp9fd731; return array('user_id' => 2, 'order_no' => $spd58066, 'product_id' => 1, 'count' => 1); });
